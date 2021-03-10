@@ -1,0 +1,780 @@
+
+ Start  Stop   Length Name                   Class
+ 00000H 00000H 00000H IRAM                   STACK
+ 10000H 10885H 00886H DATA                   DATA
+ 10886H 11011H 0078CH BSS                    DATA
+ 11012H 11012H 00000H ENDBSS                 DATA
+ 11020H 11A1FH 00A00H XSTACK                 DATA
+ 11A20H 11A20H 00000H ENDSTK                 DATA
+ 9F000H 9F885H 00886H _GHOST_DATA            DATA
+ 11E00H 11FFFH 00200H SAVE_DATA              SAVE_DATA
+ 80000H 800AEH 000AFH TEXT                   CODE
+ 800AFH 80532H 00484H SWANMAIN_TEXT          CODE
+ 80533H 80EB6H 00984H SPRINTF_TEXT           CODE
+ 80EB7H 8134FH 00499H SYSTEM_TEXT            CODE
+ 81350H 814D4H 00185H PAD_TEXT               CODE
+ 814D5H 8212AH 00C56H MEMORY_TEXT            CODE
+ 8212BH 82B1DH 009F3H select_TEXT            CODE
+ 82B1EH 82BABH 0008EH ASM_TEXT               CODE
+ 82BACH 830F1H 00546H SERIAL_TEXT            CODE
+ 830F2H 83852H 00761H IP_MES_TEXT            CODE
+ 83853H 839BEH 0016CH DEBUG_TEXT             CODE
+ 839BFH 83CE9H 0032BH CONSOLE_TEXT           CODE
+ 83CEAH 84275H 0058CH TITLE_TEXT             CODE
+ 84276H 8434DH 000D8H LOGO_TEXT              CODE
+ 8434EH 86844H 024F7H m_game_TEXT            CODE
+ 86845H 886ABH 01E67H m_sub_TEXT             CODE
+ 886ACH 89071H 009C6H m_weapon_TEXT          CODE
+ 89072H 89B04H 00A93H m_cpu2p_TEXT           CODE
+ 89B05H 8B5EBH 01AE7H menu_TEXT              CODE
+ 8B5ECH 8CFD2H 019E7H unisel_TEXT            CODE
+ 8CFD3H 8DA67H 00A95H stagesel_TEXT          CODE
+ 8DA68H 8F9FEH 01F97H tuneup_TEXT            CODE
+ 8F9FFH 90420H 00A22H story_TEXT             CODE
+ 90421H 909C7H 005A7H PUT_TEXT_TEXT          CODE
+ 909D0H 90FC6H 005F7H SOUND_CODE             CODE
+ 90FC7H 91734H 0076EH ending_TEXT            CODE
+ 91735H 918E9H 001B5H flash_TEXT             CODE
+ 918EAH 91D26H 0043DH _GENETEXT              CODE
+ 91D27H 9211DH 003F7H SWAN_L_C_TEXT          CODE
+ 9211EH 9212DH 00010H _KNOTEXT               CODE
+ 9212EH 9213CH 0000FH STRING_TEXT            CODE
+ 9213DH 92143H 00007H GENERAL_TEXT           CODE
+ 92150H 92150H 00000H FAR_BSS                FAR_BSS
+ 92150H 92150H 00000H END_FAR_BSS            END_FAR_BSS
+ A0000H A06BFH 006C0H FAR_DATA               FAR_DATA
+ A06C0H A06D0H 00011H SPRINTF_1_DATA         FAR_DATA
+ A06D2H A06E2H 00011H SPRINTF_2_DATA         FAR_DATA
+ A06E4H A06FBH 00018H SPRINTF_3_DATA         FAR_DATA
+ A06FCH A070FH 00014H SPRINTF_4_DATA         FAR_DATA
+ A0710H A074FH 00040H SPRINTF_5_DATA         FAR_DATA
+ A0750H A0763H 00014H MEMORY_1_DATA          FAR_DATA
+ A0764H A077EH 0001BH MEMORY_2_DATA          FAR_DATA
+ A0780H A0793H 00014H MEMORY_3_DATA          FAR_DATA
+ A0794H A07A5H 00012H MEMORY_4_DATA          FAR_DATA
+ A07A6H A07BAH 00015H MEMORY_5_DATA          FAR_DATA
+ A07BCH A07D0H 00015H MEMORY_6_DATA          FAR_DATA
+ A07D2H A07E9H 00018H MEMORY_7_DATA          FAR_DATA
+ A07EAH A07F5H 0000CH MEMORY_8_DATA          FAR_DATA
+ A07F6H A0812H 0001DH select_1_DATA          FAR_DATA
+ A0814H A0830H 0001DH select_2_DATA          FAR_DATA
+ A0832H A084EH 0001DH select_3_DATA          FAR_DATA
+ A0850H A086CH 0001DH select_4_DATA          FAR_DATA
+ A086EH A088AH 0001DH select_5_DATA          FAR_DATA
+ A088CH A08A8H 0001DH select_6_DATA          FAR_DATA
+ A08AAH A08C6H 0001DH select_7_DATA          FAR_DATA
+ A08C8H A08E4H 0001DH select_8_DATA          FAR_DATA
+ A08E6H A0902H 0001DH select_9_DATA          FAR_DATA
+ A0904H A0920H 0001DH select_10_DATA         FAR_DATA
+ A0922H A093EH 0001DH select_11_DATA         FAR_DATA
+ A0940H A095CH 0001DH select_12_DATA         FAR_DATA
+ A095EH A097AH 0001DH select_13_DATA         FAR_DATA
+ A097CH A0998H 0001DH select_14_DATA         FAR_DATA
+ A099AH A09B6H 0001DH select_15_DATA         FAR_DATA
+ A09B8H A09D4H 0001DH select_16_DATA         FAR_DATA
+ A09D6H A09F2H 0001DH select_17_DATA         FAR_DATA
+ A09F4H A0A10H 0001DH select_18_DATA         FAR_DATA
+ A0A12H A0A59H 00048H select_19_DATA         FAR_DATA
+ A0A5AH A0A63H 0000AH select_20_DATA         FAR_DATA
+ A0A64H A0A6DH 0000AH select_21_DATA         FAR_DATA
+ A0A6EH A0A77H 0000AH select_22_DATA         FAR_DATA
+ A0A78H A0A81H 0000AH select_23_DATA         FAR_DATA
+ A0A82H A0A91H 00010H select_24_DATA         FAR_DATA
+ A0A92H A0AA9H 00018H select_25_DATA         FAR_DATA
+ A0AAAH A0AB9H 00010H select_26_DATA         FAR_DATA
+ A0ABAH A0AC8H 0000FH select_27_DATA         FAR_DATA
+ A0ACAH A0AD6H 0000DH select_28_DATA         FAR_DATA
+ A0AD8H A0AE4H 0000DH select_29_DATA         FAR_DATA
+ A0AE6H A0AF4H 0000FH select_30_DATA         FAR_DATA
+ A0AF6H A0B03H 0000EH select_31_DATA         FAR_DATA
+ A0B04H A0B09H 00006H select_32_DATA         FAR_DATA
+ A0B0AH A0B17H 0000EH select_33_DATA         FAR_DATA
+ A0B18H A0B26H 0000FH select_34_DATA         FAR_DATA
+ A0B28H A0B35H 0000EH select_35_DATA         FAR_DATA
+ A0B36H A0B44H 0000FH select_36_DATA         FAR_DATA
+ A0B46H A0B55H 00010H select_37_DATA         FAR_DATA
+ A0B56H A0B69H 00014H select_38_DATA         FAR_DATA
+ A0B6AH A0B7EH 00015H select_39_DATA         FAR_DATA
+ A0B80H A0B8EH 0000FH select_40_DATA         FAR_DATA
+ A0B90H A0B9FH 00010H select_41_DATA         FAR_DATA
+ A0BA0H A0C53H 000B4H select_42_DATA         FAR_DATA
+ A0C54H A0D53H 00100H WORK_1_DATA            FAR_DATA
+ A0D54H A0E53H 00100H WORK_2_DATA            FAR_DATA
+ A0E54H A0F53H 00100H WORK_3_DATA            FAR_DATA
+ A0F54H A1053H 00100H WORK_4_DATA            FAR_DATA
+ A1054H A1153H 00100H WORK_5_DATA            FAR_DATA
+ A1154H A1253H 00100H WORK_6_DATA            FAR_DATA
+ A1254H A1353H 00100H WORK_7_DATA            FAR_DATA
+ A1354H A1453H 00100H WORK_8_DATA            FAR_DATA
+ A1454H A1553H 00100H WORK_9_DATA            FAR_DATA
+ A1554H A1653H 00100H WORK_10_DATA           FAR_DATA
+ A1654H A1753H 00100H WORK_11_DATA           FAR_DATA
+ A1754H A1853H 00100H WORK_12_DATA           FAR_DATA
+ A1854H A1953H 00100H WORK_13_DATA           FAR_DATA
+ A1954H A1A53H 00100H WORK_14_DATA           FAR_DATA
+ A1A54H A1B53H 00100H WORK_15_DATA           FAR_DATA
+ A1B54H A1C53H 00100H WORK_16_DATA           FAR_DATA
+ A1C54H A1D53H 00100H WORK_17_DATA           FAR_DATA
+ A1D54H A1E53H 00100H WORK_18_DATA           FAR_DATA
+ A1E54H A1F53H 00100H WORK_19_DATA           FAR_DATA
+ A1F54H A2053H 00100H WORK_20_DATA           FAR_DATA
+ A2054H A2153H 00100H WORK_21_DATA           FAR_DATA
+ A2154H A2177H 00024H WORK_22_DATA           FAR_DATA
+ A2178H A219BH 00024H WORK_23_DATA           FAR_DATA
+ A219CH A21A7H 0000CH WORK_24_DATA           FAR_DATA
+ A21A8H A2235H 0008EH CONSOLE_1_DATA         FAR_DATA
+ A2236H A223CH 00007H CONSOLE_2_DATA         FAR_DATA
+ A223EH A2247H 0000AH CONSOLE_3_DATA         FAR_DATA
+ A2248H A224DH 00006H TITLE_1_DATA           FAR_DATA
+ A2250H A2D3FH 00AF0H FILLSAIL               FAR_DATA
+ A2D40H A377FH 00A40H SAMMYL                 FAR_DATA
+ A3780H A477FH 01000H SH_FONT                FAR_DATA
+ A4780H A5B2FH 013B0H KEYBOARD               FAR_DATA
+ A5B30H A5B35H 00006H m_sub_1_DATA           FAR_DATA
+ A5B36H A5B3AH 00005H m_sub_2_DATA           FAR_DATA
+ A5B3CH A5B43H 00008H m_sub_3_DATA           FAR_DATA
+ A5B44H A5B45H 00002H m_sub_4_DATA           FAR_DATA
+ A5B46H A5B49H 00004H m_sub_5_DATA           FAR_DATA
+ A5B4AH A5B4CH 00003H m_sub_6_DATA           FAR_DATA
+ A5B50H A710FH 015C0H G_CONFIG               FAR_DATA
+ A7110H A72AFH 001A0H func_tbl_1_DATA        FAR_DATA
+ A72B0H A73E7H 00138H func_tbl_2_DATA        FAR_DATA
+ A73E8H A73EFH 00008H func_tbl_3_DATA        FAR_DATA
+ A73F0H A73F7H 00008H func_tbl_4_DATA        FAR_DATA
+ A73F8H A73FFH 00008H func_tbl_5_DATA        FAR_DATA
+ A7400H A7407H 00008H func_tbl_6_DATA        FAR_DATA
+ A7408H A740FH 00008H func_tbl_7_DATA        FAR_DATA
+ A7410H A7417H 00008H func_tbl_8_DATA        FAR_DATA
+ A7418H A741FH 00008H func_tbl_9_DATA        FAR_DATA
+ A7420H A7427H 00008H func_tbl_10_DATA       FAR_DATA
+ A7428H A742FH 00008H func_tbl_11_DATA       FAR_DATA
+ A7430H A7437H 00008H func_tbl_12_DATA       FAR_DATA
+ A7438H A743FH 00008H func_tbl_13_DATA       FAR_DATA
+ A7440H A7447H 00008H func_tbl_14_DATA       FAR_DATA
+ A7448H A744FH 00008H func_tbl_15_DATA       FAR_DATA
+ A7450H A7457H 00008H func_tbl_16_DATA       FAR_DATA
+ A7458H A745FH 00008H func_tbl_17_DATA       FAR_DATA
+ A7460H A7467H 00008H func_tbl_18_DATA       FAR_DATA
+ A7468H A746FH 00008H func_tbl_19_DATA       FAR_DATA
+ A7470H A7477H 00008H func_tbl_20_DATA       FAR_DATA
+ A7478H A747FH 00008H func_tbl_21_DATA       FAR_DATA
+ A7480H A7487H 00008H func_tbl_22_DATA       FAR_DATA
+ A7488H A748FH 00008H func_tbl_23_DATA       FAR_DATA
+ A7490H A7497H 00008H func_tbl_24_DATA       FAR_DATA
+ A7498H A749FH 00008H func_tbl_25_DATA       FAR_DATA
+ A74A0H A74A7H 00008H func_tbl_26_DATA       FAR_DATA
+ A74A8H A74AFH 00008H func_tbl_27_DATA       FAR_DATA
+ A74B0H A7513H 00064H func_tbl_28_DATA       FAR_DATA
+ A7514H A7798H 00285H func_tbl_29_DATA       FAR_DATA
+ A779AH A77A1H 00008H func_tbl_30_DATA       FAR_DATA
+ A77A2H A77A9H 00008H func_tbl_31_DATA       FAR_DATA
+ A77AAH A77B1H 00008H func_tbl_32_DATA       FAR_DATA
+ A77B2H A77B9H 00008H func_tbl_33_DATA       FAR_DATA
+ A77BAH A77C1H 00008H func_tbl_34_DATA       FAR_DATA
+ A77C2H A77C9H 00008H func_tbl_35_DATA       FAR_DATA
+ A77CAH A77D1H 00008H func_tbl_36_DATA       FAR_DATA
+ A77D2H A77D9H 00008H func_tbl_37_DATA       FAR_DATA
+ A77DAH A77E1H 00008H func_tbl_38_DATA       FAR_DATA
+ A77E2H A77E9H 00008H func_tbl_39_DATA       FAR_DATA
+ A77EAH A77F1H 00008H func_tbl_40_DATA       FAR_DATA
+ A77F2H A77F9H 00008H func_tbl_41_DATA       FAR_DATA
+ A77FAH A7801H 00008H func_tbl_42_DATA       FAR_DATA
+ A7802H A7809H 00008H func_tbl_43_DATA       FAR_DATA
+ A780AH A7811H 00008H func_tbl_44_DATA       FAR_DATA
+ A7812H A7819H 00008H func_tbl_45_DATA       FAR_DATA
+ A781AH A7821H 00008H func_tbl_46_DATA       FAR_DATA
+ A7822H A7829H 00008H func_tbl_47_DATA       FAR_DATA
+ A782AH A7831H 00008H func_tbl_48_DATA       FAR_DATA
+ A7832H A7839H 00008H func_tbl_49_DATA       FAR_DATA
+ A783AH A7841H 00008H func_tbl_50_DATA       FAR_DATA
+ A7842H A7849H 00008H func_tbl_51_DATA       FAR_DATA
+ A784AH A7851H 00008H func_tbl_52_DATA       FAR_DATA
+ A7852H A7859H 00008H func_tbl_53_DATA       FAR_DATA
+ A785AH A7861H 00008H func_tbl_54_DATA       FAR_DATA
+ A7862H A7869H 00008H func_tbl_55_DATA       FAR_DATA
+ A786AH A7871H 00008H func_tbl_56_DATA       FAR_DATA
+ A7872H A7879H 00008H func_tbl_57_DATA       FAR_DATA
+ A787AH A7881H 00008H func_tbl_58_DATA       FAR_DATA
+ A7882H A7889H 00008H func_tbl_59_DATA       FAR_DATA
+ A788AH A7891H 00008H func_tbl_60_DATA       FAR_DATA
+ A7892H A7899H 00008H func_tbl_61_DATA       FAR_DATA
+ A789AH A78A1H 00008H func_tbl_62_DATA       FAR_DATA
+ A78A2H A78A9H 00008H func_tbl_63_DATA       FAR_DATA
+ A78AAH A78B1H 00008H func_tbl_64_DATA       FAR_DATA
+ A78B2H A78B9H 00008H func_tbl_65_DATA       FAR_DATA
+ A78BAH A78C1H 00008H func_tbl_66_DATA       FAR_DATA
+ A78C2H A78C9H 00008H func_tbl_67_DATA       FAR_DATA
+ A78CAH A78D1H 00008H func_tbl_68_DATA       FAR_DATA
+ A78D2H A78D9H 00008H func_tbl_69_DATA       FAR_DATA
+ A78DAH A78E1H 00008H func_tbl_70_DATA       FAR_DATA
+ A78E2H A78E9H 00008H func_tbl_71_DATA       FAR_DATA
+ A78EAH A7991H 000A8H func_tbl_72_DATA       FAR_DATA
+ A7992H A7999H 00008H func_tbl_73_DATA       FAR_DATA
+ A799AH A79A1H 00008H func_tbl_74_DATA       FAR_DATA
+ A79A2H A79A9H 00008H func_tbl_75_DATA       FAR_DATA
+ A79AAH A79B1H 00008H func_tbl_76_DATA       FAR_DATA
+ A79B2H A79B9H 00008H func_tbl_77_DATA       FAR_DATA
+ A79BAH A79C1H 00008H func_tbl_78_DATA       FAR_DATA
+ A79C2H A79D9H 00018H func_tbl_79_DATA       FAR_DATA
+ A79DAH A79F9H 00020H func_tbl_80_DATA       FAR_DATA
+ A79FAH A7A0AH 00011H func_tbl_81_DATA       FAR_DATA
+ A7A10H AAA4FH 03040H G_MENU                 FAR_DATA
+ AAA50H ACE4FH 02400H G_ENG                  FAR_DATA
+ ACE50H AE1DFH 01390H G_GAME                 FAR_DATA
+ AE1E0H AEAAFH 008D0H G_TURN                 FAR_DATA
+ AEAB0H AF35FH 008B0H G_HP                   FAR_DATA
+ AF360H B1C3FH 028E0H G_FUNC                 FAR_DATA
+ B1C40H B278FH 00B50H G_SPACE                FAR_DATA
+ B2790H B493FH 021B0H G_AU1                  FAR_DATA
+ B4940H B6AAFH 02170H G_AU2                  FAR_DATA
+ B6AB0H B7E3FH 01390H G_AU3                  FAR_DATA
+ B7E40H B9C2FH 01DF0H G_TITLE                FAR_DATA
+ B9C30H B9C41H 00012H unisel_1_DATA          FAR_DATA
+ B9C42H B9C53H 00012H unisel_2_DATA          FAR_DATA
+ B9C54H B9C65H 00012H unisel_3_DATA          FAR_DATA
+ B9C66H B9C6AH 00005H unisel_4_DATA          FAR_DATA
+ B9C6CH B9C70H 00005H unisel_5_DATA          FAR_DATA
+ B9C72H B9C77H 00006H unisel_6_DATA          FAR_DATA
+ B9C78H B9C7AH 00003H unisel_7_DATA          FAR_DATA
+ B9C7CH B9C7FH 00004H unisel_8_DATA          FAR_DATA
+ B9C80H B9C82H 00003H unisel_9_DATA          FAR_DATA
+ B9C84H B9C8EH 0000BH unisel_10_DATA         FAR_DATA
+ B9C90H B9C9AH 0000BH unisel_11_DATA         FAR_DATA
+ B9C9CH B9CA6H 0000BH unisel_12_DATA         FAR_DATA
+ B9CA8H B9CB4H 0000DH unisel_13_DATA         FAR_DATA
+ B9CB6H B9CC0H 0000BH unisel_14_DATA         FAR_DATA
+ B9CC2H B9CCCH 0000BH unisel_15_DATA         FAR_DATA
+ B9CCEH B9CE9H 0001CH unisel_16_DATA         FAR_DATA
+ B9CF0H BA507H 00818H G_UNISE2               FAR_DATA
+ BA510H BAE7FH 00970H G_STGSEL               FAR_DATA
+ BAE80H BAE8DH 0000EH tuneup_1_DATA          FAR_DATA
+ BAE8EH BAFEDH 00160H tuneup_2_DATA          FAR_DATA
+ BAFEEH BB02DH 00040H tuneup_3_DATA          FAR_DATA
+ BB030H BCB1FH 01AF0H G_TUNEUP               FAR_DATA
+ BCB20H BCB6FH 00050H story_1_DATA           FAR_DATA
+ BCB70H BCBB9H 0004AH story_2_DATA           FAR_DATA
+ BCBBAH BCC10H 00057H story_3_DATA           FAR_DATA
+ BCC12H BCC42H 00031H story_4_DATA           FAR_DATA
+ BCC44H BCC8AH 00047H story_5_DATA           FAR_DATA
+ BCC8CH BCCC9H 0003EH story_6_DATA           FAR_DATA
+ BCCCAH BCD19H 00050H story_7_DATA           FAR_DATA
+ BCD1AH BCD54H 0003BH story_8_DATA           FAR_DATA
+ BCD56H BCD8BH 00036H story_9_DATA           FAR_DATA
+ BCD8CH BCDD6H 0004BH story_10_DATA          FAR_DATA
+ BCDD8H BCE30H 00059H story_11_DATA          FAR_DATA
+ BCE32H BCE8EH 0005DH story_12_DATA          FAR_DATA
+ BCE90H BCED4H 00045H story_13_DATA          FAR_DATA
+ BCED6H BCF11H 0003CH story_14_DATA          FAR_DATA
+ BCF12H BCF67H 00056H story_15_DATA          FAR_DATA
+ BCF68H BCFA1H 0003AH story_16_DATA          FAR_DATA
+ BCFA2H BCFDFH 0003EH story_17_DATA          FAR_DATA
+ BCFE0H BD00CH 0002DH story_18_DATA          FAR_DATA
+ BD00EH BD049H 0003CH story_19_DATA          FAR_DATA
+ BD04AH BD07FH 00036H story_20_DATA          FAR_DATA
+ BD080H BD12AH 000ABH story_21_DATA          FAR_DATA
+ BD12CH BD17CH 00051H story_22_DATA          FAR_DATA
+ BD17EH BD1B8H 0003BH story_23_DATA          FAR_DATA
+ BD1BAH BD1FBH 00042H story_24_DATA          FAR_DATA
+ BD1FCH BD234H 00039H story_25_DATA          FAR_DATA
+ BD236H BD27BH 00046H story_26_DATA          FAR_DATA
+ BD27CH BD2B9H 0003EH story_27_DATA          FAR_DATA
+ BD2BAH BD312H 00059H story_28_DATA          FAR_DATA
+ BD314H BD364H 00051H story_29_DATA          FAR_DATA
+ BD366H BD395H 00030H story_30_DATA          FAR_DATA
+ BD396H BD3D3H 0003EH story_31_DATA          FAR_DATA
+ BD3D4H BD41AH 00047H story_32_DATA          FAR_DATA
+ BD41CH BD45FH 00044H story_33_DATA          FAR_DATA
+ BD460H BD4E2H 00083H story_34_DATA          FAR_DATA
+ BD4E4H BD52AH 00047H story_35_DATA          FAR_DATA
+ BD52CH BD56AH 0003FH story_36_DATA          FAR_DATA
+ BD56CH BD5BCH 00051H story_37_DATA          FAR_DATA
+ BD5BEH BD5F3H 00036H story_38_DATA          FAR_DATA
+ BD5F4H BD631H 0003EH story_39_DATA          FAR_DATA
+ BD632H BD661H 00030H story_40_DATA          FAR_DATA
+ BD662H BD673H 00012H story_41_DATA          FAR_DATA
+ BD674H BD713H 000A0H story_42_DATA          FAR_DATA
+ BD720H BE4BFH 00DA0H G_STORY                FAR_DATA
+ BE4C0H BF99FH 014E0H G_FACE                 FAR_DATA
+ BF9A0H C043FH 00AA0H G_02                   FAR_DATA
+ C0440H C104FH 00C10H G_04                   FAR_DATA
+ C1050H C1C9FH 00C50H G_06                   FAR_DATA
+ C1CA0H C282FH 00B90H G_08                   FAR_DATA
+ C2830H C359FH 00D70H G_10                   FAR_DATA
+ C35A0H C427FH 00CE0H G_12                   FAR_DATA
+ C4280H C4FEFH 00D70H G_14                   FAR_DATA
+ C4FF0H C5D5FH 00D70H G_16                   FAR_DATA
+ C5D60H C67FFH 00AA0H G_18                   FAR_DATA
+ C6800H C756FH 00D70H G_20                   FAR_DATA
+ C7570H C80DFH 00B70H G_01                   FAR_DATA
+ C80E0H C8D2FH 00C50H G_03                   FAR_DATA
+ C8D30H C998FH 00C60H G_05                   FAR_DATA
+ C9990H CA67FH 00CF0H G_07                   FAR_DATA
+ CA680H CB3EFH 00D70H G_09                   FAR_DATA
+ CB3F0H CC10FH 00D20H G_11                   FAR_DATA
+ CC110H CCC2FH 00B20H G_13                   FAR_DATA
+ CCC30H CD95FH 00D30H G_15                   FAR_DATA
+ CD960H CE6CFH 00D70H G_17                   FAR_DATA
+ CE6D0H CF3DFH 00D10H G_19                   FAR_DATA
+ CF3E0H CF3E5H 00006H PUT_TEXT_1_DATA        FAR_DATA
+ CF3E6H CF3F5H 00010H PUT_TEXT_2_DATA        FAR_DATA
+ CF3F6H CF403H 0000EH PUT_TEXT_3_DATA        FAR_DATA
+ CF404H CF410H 0000DH PUT_TEXT_4_DATA        FAR_DATA
+ CF412H CF41DH 0000CH PUT_TEXT_5_DATA        FAR_DATA
+ CF41EH CF42BH 0000EH PUT_TEXT_6_DATA        FAR_DATA
+ CF42CH CF437H 0000CH PUT_TEXT_7_DATA        FAR_DATA
+ CF438H CF447H 00010H PUT_TEXT_8_DATA        FAR_DATA
+ CF448H CF45AH 00013H PUT_TEXT_9_DATA        FAR_DATA
+ CF45CH CF468H 0000DH PUT_TEXT_10_DATA       FAR_DATA
+ CF46AH CF47DH 00014H PUT_TEXT_11_DATA       FAR_DATA
+ CF47EH CF48AH 0000DH PUT_TEXT_12_DATA       FAR_DATA
+ CF48CH CF49CH 00011H PUT_TEXT_13_DATA       FAR_DATA
+ CF49EH CF4ABH 0000EH PUT_TEXT_14_DATA       FAR_DATA
+ CF4ACH CF4B9H 0000EH PUT_TEXT_15_DATA       FAR_DATA
+ CF4BAH CF4C7H 0000EH PUT_TEXT_16_DATA       FAR_DATA
+ CF4C8H CF4D6H 0000FH PUT_TEXT_17_DATA       FAR_DATA
+ CF4D8H CF4E5H 0000EH PUT_TEXT_18_DATA       FAR_DATA
+ CF4E6H CF4F3H 0000EH PUT_TEXT_19_DATA       FAR_DATA
+ CF4F4H CF4FAH 00007H PUT_TEXT_20_DATA       FAR_DATA
+ CF4FCH CF504H 00009H PUT_TEXT_21_DATA       FAR_DATA
+ CF506H CF515H 00010H PUT_TEXT_22_DATA       FAR_DATA
+ CF516H CF523H 0000EH PUT_TEXT_23_DATA       FAR_DATA
+ CF524H CF535H 00012H PUT_TEXT_24_DATA       FAR_DATA
+ CF536H CF544H 0000FH PUT_TEXT_25_DATA       FAR_DATA
+ CF546H CF553H 0000EH PUT_TEXT_26_DATA       FAR_DATA
+ CF554H CF564H 00011H PUT_TEXT_27_DATA       FAR_DATA
+ CF566H CF576H 00011H PUT_TEXT_28_DATA       FAR_DATA
+ CF578H CF582H 0000BH PUT_TEXT_29_DATA       FAR_DATA
+ CF584H CF592H 0000FH PUT_TEXT_30_DATA       FAR_DATA
+ CF594H CF5A1H 0000EH PUT_TEXT_31_DATA       FAR_DATA
+ CF5A2H CF5B2H 00011H PUT_TEXT_32_DATA       FAR_DATA
+ CF5B4H CF5C3H 00010H PUT_TEXT_33_DATA       FAR_DATA
+ CF5C4H CF5D2H 0000FH PUT_TEXT_34_DATA       FAR_DATA
+ CF5D4H CF5E2H 0000FH PUT_TEXT_35_DATA       FAR_DATA
+ CF5E4H CF5F3H 00010H PUT_TEXT_36_DATA       FAR_DATA
+ CF5F4H CF603H 00010H PUT_TEXT_37_DATA       FAR_DATA
+ CF604H CF614H 00011H PUT_TEXT_38_DATA       FAR_DATA
+ CF616H CF625H 00010H PUT_TEXT_39_DATA       FAR_DATA
+ CF626H CF632H 0000DH PUT_TEXT_40_DATA       FAR_DATA
+ CF634H CF63FH 0000CH PUT_TEXT_41_DATA       FAR_DATA
+ CF640H CF64CH 0000DH PUT_TEXT_42_DATA       FAR_DATA
+ CF64EH CF659H 0000CH PUT_TEXT_43_DATA       FAR_DATA
+ CF65AH CF666H 0000DH PUT_TEXT_44_DATA       FAR_DATA
+ CF668H CF674H 0000DH PUT_TEXT_45_DATA       FAR_DATA
+ CF676H CF683H 0000EH PUT_TEXT_46_DATA       FAR_DATA
+ CF684H CF692H 0000FH PUT_TEXT_47_DATA       FAR_DATA
+ CF694H CF6A1H 0000EH PUT_TEXT_48_DATA       FAR_DATA
+ CF6A2H CF6B0H 0000FH PUT_TEXT_49_DATA       FAR_DATA
+ CF6B2H CF6BFH 0000EH PUT_TEXT_50_DATA       FAR_DATA
+ CF6C0H CF6CDH 0000EH PUT_TEXT_51_DATA       FAR_DATA
+ CF6CEH CF6DFH 00012H PUT_TEXT_52_DATA       FAR_DATA
+ CF6E0H CF6EEH 0000FH PUT_TEXT_53_DATA       FAR_DATA
+ CF6F0H CF700H 00011H PUT_TEXT_54_DATA       FAR_DATA
+ CF702H CF70CH 0000BH PUT_TEXT_55_DATA       FAR_DATA
+ CF70EH CF71BH 0000EH PUT_TEXT_56_DATA       FAR_DATA
+ CF71CH CF729H 0000EH PUT_TEXT_57_DATA       FAR_DATA
+ CF72AH CF759H 00030H PUT_TEXT_58_DATA       FAR_DATA
+ CF75AH CF77DH 00024H PUT_TEXT_59_DATA       FAR_DATA
+ CF77EH CF821H 000A4H PUT_TEXT_60_DATA       FAR_DATA
+ CF830H D1DA5H 02576H SOUND_DATA             FAR_DATA
+ D1DB0H D2F8FH 011E0H G_EFEC0                FAR_DATA
+ D2F90H D3ACFH 00B40H G_EFEC1                FAR_DATA
+ D3AD0H D421DH 0074EH G_EFEC21               FAR_DATA
+ D4220H D45FFH 003E0H G_EFEC22               FAR_DATA
+ D4600H D566FH 01070H G_EFEC3                FAR_DATA
+ D5670H D62BFH 00C50H G_EFEC41               FAR_DATA
+ D62C0H D6B8FH 008D0H G_EFEC42               FAR_DATA
+ D6B90H D7437H 008A8H G_EFEC5                FAR_DATA
+ D7440H D79EFH 005B0H G_EFEC61               FAR_DATA
+ D79F0H D7E39H 0044AH G_EFEC62               FAR_DATA
+ D7E40H D832FH 004F0H G_EFEC71               FAR_DATA
+ D8330H D8713H 003E4H G_EFEC72               FAR_DATA
+ D8720H D8F19H 007FAH G_EFEC8                FAR_DATA
+ D8F20H DD2AFH 04390H G_MSG                  FAR_DATA
+ DD2B0H DF0DFH 01E30H G_FON16H               FAR_DATA
+ DF0E0H E06BFH 015E0H G_FON16L               FAR_DATA
+ E06C0H E42EFH 03C30H G_ENDING               FAR_DATA
+ E42F0H E444DH 0015EH flash_1_DATA           FAR_DATA
+ E444EH E4462H 00015H flash_2_DATA           FAR_DATA
+ E4464H E447EH 0001BH flash_3_DATA           FAR_DATA
+ B0000H B0000H 00000H FAR_DATA2              FAR_DATA2
+ C0000H C0000H 00000H FAR_DATA3              FAR_DATA3
+ D0000H D0000H 00000H FAR_DATA4              FAR_DATA4
+ E0000H E0000H 00000H FAR_DATA5              FAR_DATA5
+ F0000H F0000H 00000H FAR_DATA6              FAR_DATA6
+ F0000H F8536H 08537H MAINMAP                FAR_DATA6
+ FFFF0H FFFFFH 00010H RESET                  EXTRA
+ F0000H F0000H 00000H FAR_DATA7              (null)
+ F0000H F0000H 00000H FAR_DATA8              (null)
+ F0000H F0000H 00000H FAR_DATA9              (null)
+
+ Origin   Group
+ 0000:0   SGROUP
+ 1000:0   DGROUP
+ 8000:0   CGROUP
+ FFFF:0   EGROUP
+
+  Address         Publics by Value
+
+ 1000:0000       _8087_
+ 1000:0000       RAMTOP
+ 1000:0002       _st87
+ 1000:0004       _cw87
+ 1000:0006       __cw87
+ 1000:0008       _fpe_handler_
+ 1000:0058       ssprintf_
+ 1000:005C       cel_tbl_
+ 1000:0060       map_tbl_
+ 1000:0064       spr_tbl_
+ 1000:0068       nbg_disp_
+ 1000:006C       spr_disp_
+ 1000:006E       nbg_xoff_
+ 1000:0072       nbg_yoff_
+ 1000:0076       lcd_option_
+ 1000:0078       colpal_
+ 1000:00F8       vram_
+ 1000:020C       com_user_
+ 1000:0600       effect_tbl_
+ 1000:077E       bitmap_nbg_
+ 1000:0784       _ctype_
+ 1000:0886       tsk1cont_
+ 1000:094E       fade_
+ 1000:0952       pad_
+ 1000:096E       memory_alloc_work_
+ 1000:0D80       rcv_work_
+ 1000:0D8C       receive_buf_
+ 1000:1002       mother_child_
+ 1000:1004       v_blank_cnt_count_
+ 1000:1006       v_blank_int_count_
+ 1000:1008       h_blank_cnt_count_
+ 1000:100A       sr_count_
+ 1000:100C       sw_count_
+ 1000:100E       int_frag_
+ 1000:1010       int_enable_
+ 1000:1012       _STACK
+ 1000:1A20       _ENDSTACK
+ 1000:1E00       SAVE_DATA_START_
+ 8000:0000       ROMTOP
+ 8000:0082       _DEF_FPE_
+ 8000:0083       sound_init_
+ 8000:008F       bgmreq_
+ 8000:009F       sereq_
+ 800A:000F       remain_
+ 800A:00CC       task_default_task_
+ 800A:0167       task_default_task2_
+ 800A:0194       tsk_init_
+ 800A:01F7       task_append_
+ 800A:023B       task_call_
+ 800A:025F       task_call_param2_
+ 800A:0274       task_delete_
+ 800A:02B0       task_delete_fade_
+ 800A:02CD       task_delete_all_
+ 800A:02E5       task_append2_
+ 800A:033C       task_call2_
+ 800A:0374       task_delete2_
+ 800A:03CB       task_delete2_all_
+ 800A:040D       SWANmain_
+ 800A:048D       v_blank_int_
+ 8053:0003       print_
+ 8053:0094       bmp_print_
+ 8053:010A       bmp_print_next_
+ 8053:023B       hsprintf_
+ 8053:0680       chr2str_
+ 8053:06EC       bin2str_
+ 8053:0762       str2str_
+ 8053:07DC       dec2str_
+ 8053:08E7       hex2str_
+ 80EB:0007       nbg_ddf_
+ 80EB:0041       spr_ddf_
+ 80EB:0072       nbg_scroll_
+ 80EB:00AA       cls_
+ 80EB:012C       spr_cls_
+ 80EB:0153       SetPaletteRate_
+ 80EB:02D2       SetPalette_
+ 80EB:032E       fade_run_
+ 80EB:0370       fade_tone_
+ 80EB:0374       fade_in_
+ 80EB:037F       fade_out_
+ 80EB:038C       lcd_option_1_
+ 80EB:03A2       lcd_option_2_
+ 80EB:03BA       lcd_option_3_
+ 80EB:03D0       init_system_
+ 8135:0000       pad_init_
+ 8135:0055       pad_task_
+ 8135:014E       get_pad_
+ 814D:0005       meminit_
+ 814D:0059       memalloc_
+ 814D:00F1       memfree_
+ 814D:0108       memory_test_init_
+ 814D:0993       memory_dump_init_
+ 8212:000B       select_init_
+ 8212:097D       alpha_init_
+ 82B1:000E       font_x_swap_
+ 82B1:0020       font_put2_sub_
+ 82BA:008E       serial_init_
+ 82BA:0189       serial_receive_
+ 82BA:01D1       serial_in_
+ 82BA:020C       serial_out_sub_
+ 82BA:034F       serial_out_
+ 82BA:050D       serial_ver_info_
+ 82BA:054A       serial_exist_
+ 82BA:054E       serial_in_frag_
+ 830F:0186       ip_init_
+ 830F:0336       ip_r_
+ 830F:03BF       ip_w_
+ 830F:0478       ip_clear_
+ 830F:06BD       ip_mes_test_init_
+ 8385:0068       debug_init_
+ 839B:023F       console_init_
+ 83CE:015F       title_init_
+ 8427:0006       logo_init_
+ 8434:000E       m_game_reinit_
+ 8434:067F       m_game_init_
+ 8434:231D       item_used_se_
+ 8434:2352       item_used_create_
+ 8434:2461       m_game_main_lange_sub_
+ 8684:0005       font_put3_
+ 8684:00CD       font_putN_
+ 8684:0154       put_energy_value_
+ 8684:01AB       put_energy_level_
+ 8684:01E7       put_turn_value_
+ 8684:0295       put_turn_level_
+ 8684:02C5       put_hp_level_
+ 8684:0331       put_function_name_
+ 8684:03E0       put_au_big_
+ 8684:052B       load_au_small_
+ 8684:0730       put_au_small_
+ 8684:07C9       field_fix_
+ 8684:08BC       field_test_
+ 8684:0902       wall_space_make_
+ 8684:09C4       put_function_
+ 8684:0A4B       put_function_cousor_
+ 8684:0E67       put_rader_cousor_
+ 8684:0EAB       put_lange_cousor_
+ 8684:0F31       put_atack_cousor_
+ 8684:0FE8       put_atack_cousorON_
+ 8684:109F       put_move_cousor_
+ 8684:1141       put_search_cousor_
+ 8684:11CF       get_lange_test_
+ 8684:1227       put_search_hit_check_
+ 8684:1396       put_atack_hit_check_
+ 8684:1505       set_effect_task_
+ 8684:1540       run_effect_task_
+ 8684:1755       wall_sprite_
+ 8684:1927       win_icon_sprite_
+ 8684:1A1A       pause_put_
+ 8684:1C5E       screen_effect_run_
+ 8684:1CAE       decoy_put_
+ 886A:000C       m_game_main_weapon_i_sub_
+ 886A:0082       m_game_main_weapon_m_sub_
+ 886A:01F6       m_game_main_weapon_i_type15_
+ 886A:01FC       m_game_main_weapon_m_type15_
+ 886A:02D9       m_game_main_weapon_i_type16_
+ 886A:02F9       m_game_main_weapon_m_type16_
+ 886A:0514       m_game_main_weapon_i_type17_
+ 886A:051E       m_game_main_weapon_m_type17_
+ 886A:0537       m_game_main_weapon_i_type18_
+ 886A:053D       m_game_main_weapon_m_type18_
+ 886A:0673       m_game_main_weapon_i_type19_
+ 886A:0679       m_game_main_weapon_m_type19_
+ 886A:077B       m_game_main_weapon_i_type20_
+ 886A:0781       m_game_main_weapon_m_type20_
+ 886A:08CA       m_game_main_weapon_i_type21_
+ 886A:08D0       m_game_main_weapon_m_type21_
+ 8907:0002       m_cpu2p_init_
+ 8907:001D       m_cpu2p_main_
+ 89B0:0278       menu_init_
+ 8B5E:1195       unisel_init_
+ 8CFD:077C       stage_select_init_
+ 8DA6:0589       tuneup_init_
+ 8F9F:05AE       story_init_
+ 9042:0001       put_message_
+ 9042:04A8       put_char_
+ 909D:0000       SOUND_INIT
+ 909D:001B       SDREQ
+ 909D:00C6       SOUND
+ 909D:050B       VOREQ
+ 909D:055A       VOICE
+ 909D:05D2       CHECK_VOICE
+ 909D:05E3       CHECK_SE
+ 90FC:00C7       ending_init_
+ 9173:0005       stage_get_
+ 9173:0037       hstrlen_
+ 9173:0053       flash_clear_
+ 9173:0086       flash_init_
+ 918E:000A       font_load_
+ 918E:0036       put_sprite_
+ 918E:007C       pad_in_
+ 918E:00B7       get_cell_no_
+ 918E:00C0       put_cell_no_
+ 918E:00C9       far_strcpy_
+ 918E:00EE       font_put_
+ 918E:015E       bitmap_
+ 918E:01AF       put_cell_pixel_
+ 918E:01DA       get_bmp_cell_pixel_
+ 918E:0235       get_cel_no_offset_
+ 918E:0264       get_cell_pixel_offset_
+ 918E:028E       memset_
+ 918E:029E       serial_send_cause_
+ 918E:02B6       key_create_cause_
+ 918E:02CD       casette_int_cause_
+ 918E:02E5       serial_receive_cause_
+ 918E:02FD       display_data_cause_
+ 918E:0315       v_brank_cnt_cause_
+ 918E:032D       v_brank_int_cause_
+ 918E:0345       h_brank_cnt_cause_
+ 918E:0363       interrupt_init_
+ 918E:03C9       interrupt_main0_
+ 918E:03D0       interrupt_main3_
+ 918E:03E5       interrupt_main5_
+ 918E:03F9       interrupt_main6_
+ 918E:0417       interrupt_main7_
+ 918E:0429       e2lib_i_read_
+ 91D2:0007       rand_
+ 91D2:0040       srand_
+ 91D2:004A       font_put2XY_
+ 91D2:018A       get_bmp_cell_no_
+ 91D2:01E9       font_putXY_
+ 91D2:0258       font_putXYT_
+ 91D2:02CD       font_put2_
+ 9211:000E       _LMUL
+ 9212:000E       toupper_
+ 9213:000D       max_
+ A000:0000       DFONT_char_adr_
+ A06C:0000       hex_num_tbl_
+ A06D:0002       HEX_num_tbl_
+ A06E:0004       dec_div_tbl_
+ A06F:000C       hex_div_tbl_
+ A071:0000       bin_div_tbl_
+ A07F:0006       select_debug_text00_
+ A081:0004       select_debug_text01_
+ A083:0002       select_debug_text02_
+ A085:0000       select_debug_text03_
+ A086:000E       select_debug_text04_
+ A088:000C       select_debug_text05_
+ A08A:000A       select_debug_text06_
+ A08C:0008       select_debug_text07_
+ A08E:0006       select_debug_text08_
+ A090:0004       select_debug_text09_
+ A092:0002       select_debug_text10_
+ A094:0000       select_debug_text11_
+ A095:000E       select_debug_text12_
+ A097:000C       select_debug_text13_
+ A099:000A       select_debug_text14_
+ A09B:0008       select_debug_text15_
+ A09D:0006       select_debug_text16_
+ A09F:0004       select_debug_text17_
+ A0A1:0002       select_debug_text_all_
+ A0A5:000A       com_status00_
+ A0A6:0004       com_status01_
+ A0A6:000E       com_status02_
+ A0A7:0008       com_status03_
+ A0A8:0002       com_status_
+ A0A9:0002       SampleMasterMode_
+ A0AA:000A       OSReturnMain_
+ A0AB:000A       OSReturnBOM_
+ A0AC:000A       SysIPmes_
+ A0AD:0008       SysDebug_
+ A0AE:0006       SysConsole_
+ A0AF:0006       SysMemory_
+ A0B0:0004       Dummy_
+ A0B0:000A       SysLogo_
+ A0B1:0008       SysTitle_
+ A0B2:0008       SysMenu_
+ A0B3:0006       SysMgame_
+ A0B4:0006       SysTuneup_
+ A0B5:0006       SysUnitSelect_
+ A0B6:000A       SysStageSelect_
+ A0B8:0000       SysStory_
+ A0B9:0000       SysEnding_
+ A0C5:0004       lange_A_
+ A0D5:0004       lange_B_
+ A0E5:0004       lange_C_
+ A0F5:0004       lange_D_
+ A105:0004       lange_E_
+ A115:0004       lange_F_
+ A125:0004       lange_G_
+ A135:0004       lange_H_
+ A145:0004       lange_I_
+ A215:0004       lange_tbl_
+ A217:0008       atack_tbl_
+ A219:000C       search_tbl_
+ A225:0000       FILLSAIL_char_adr_
+ A2D4:0000       SAMMYL_char_adr_
+ A378:0000       SH_FONT_char_adr_
+ A478:0000       KEYBOARD_char_adr_
+ A5B5:0000       G_CONFIG_char_adr_
+ A711:0000       functbl_
+ A72B:0000       tuneup_table_
+ A74B:0000       weapon_name_
+ A751:0004       aulist_
+ A78E:000A       chara_name_
+ A79C:0002       type_name_
+ A79D:000A       stagelist_
+ A79F:000A       stageadd_
+ A7A1:0000       G_MENU_char_adr_
+ AAA5:0000       G_ENG_char_adr_
+ ACE5:0000       G_GAME_char_adr_
+ AE1E:0000       G_TURN_char_adr_
+ AEAB:0000       G_HP_char_adr_
+ AF36:0000       G_FUNC_char_adr_
+ B1C4:0000       G_SPACE_char_adr_
+ B279:0000       G_AU1_char_adr_
+ B494:0000       G_AU2_char_adr_
+ B6AB:0000       G_AU3_char_adr_
+ B7E4:0000       G_TITLE_char_adr_
+ B9CF:0000       G_UNISE2_char_adr_
+ BA51:0000       G_STGSEL_char_adr_
+ BAE8:0000       tune_func_
+ BAE8:000E       location_table_
+ BAFE:000E       position_table_
+ BB03:0000       G_TUNEUP_char_adr_
+ BD72:0000       G_STORY_char_adr_
+ BE4C:0000       G_FACE_char_adr_
+ BF9A:0000       G_02_char_adr_
+ C044:0000       G_04_char_adr_
+ C105:0000       G_06_char_adr_
+ C1CA:0000       G_08_char_adr_
+ C283:0000       G_10_char_adr_
+ C35A:0000       G_12_char_adr_
+ C428:0000       G_14_char_adr_
+ C4FF:0000       G_16_char_adr_
+ C5D6:0000       G_18_char_adr_
+ C680:0000       G_20_char_adr_
+ C757:0000       G_01_char_adr_
+ C80E:0000       G_03_char_adr_
+ C8D3:0000       G_05_char_adr_
+ C999:0000       G_07_char_adr_
+ CA68:0000       G_09_char_adr_
+ CB3F:0000       G_11_char_adr_
+ CC11:0000       G_13_char_adr_
+ CCC3:0000       G_15_char_adr_
+ CD96:0000       G_17_char_adr_
+ CE6D:0000       G_19_char_adr_
+ CF83:0000       WAVETBL
+ CF83:00AC       REQUEST_TABLE
+ CF83:22D9       ENVELOPE_TABLE
+ CF83:24FF       PCS_TABLE
+ CF83:253F       VIBRATO_TABLE
+ CF83:2576       VOICE_TABLE
+ D1DB:0000       G_EFEC0_char_adr_
+ D2F9:0000       G_EFEC1_char_adr_
+ D3AD:0000       G_EFEC21_char_adr_
+ D422:0000       G_EFEC22_char_adr_
+ D460:0000       G_EFEC3_char_adr_
+ D567:0000       G_EFEC41_char_adr_
+ D62C:0000       G_EFEC42_char_adr_
+ D6B9:0000       G_EFEC5_char_adr_
+ D744:0000       G_EFEC61_char_adr_
+ D79F:0000       G_EFEC62_char_adr_
+ D7E4:0000       G_EFEC71_char_adr_
+ D833:0000       G_EFEC72_char_adr_
+ D872:0000       G_EFEC8_char_adr_
+ D8F2:0000       G_MSG_bin_adr_
+ DD2B:0000       G_FON16H_char_adr_
+ DF0E:0000       G_FON16L_char_adr_
+ E06C:0000       G_ENDING_char_adr_
+ F000:0000       MAINMAP_text_size_
+ F000:0002       MAINMAP_text_adr_
+ FFFF:0000       CPUTOP
+
+Program entry point at 0000:0000
