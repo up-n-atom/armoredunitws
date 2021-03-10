@@ -1,7 +1,7 @@
 #Beautify port access
 #@author up-n-atom <up-n-atom@eleventwentytwo.com>
 #@category References
-# Before running this script, run https://github.com/NationalSecurityAgency/ghidra/blob/master/Ghidra/Features/Base/ghidra_scripts/mark_in_out.py
+# After running this script, run mark_in_out_16.py
 
 io = (
   'DISPLAY_CTRL',
