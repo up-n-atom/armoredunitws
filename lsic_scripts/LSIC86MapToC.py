@@ -21,7 +21,7 @@ def src_file_exists(path, ignore_errors=True):
 
         raise
 
-def int_or_str(s):
+def hex_or_str(s):
     try:
         if not s.endswith('H'):
             raise ValueError
@@ -32,22 +32,18 @@ def int_or_str(s):
 
 def ptr_or_str(s):
     try:
-        seg, off = map(lambda x: int(x, 16), s.split(':'))
+        segment, offset = map(lambda x: int(x, 16), s.split(':'))
 
-        return ((seg << 4) & 0xffff0) + off
+        return ((segment << 4) & 0xffff0) + offset
     except ValueError:
         return s.removesuffix('_')
 
-def read_and_map(file, keys, func, **kwargs):
-    data = []
-
+def read_and_map(file, keys, function):
     for line in file:
         if not (values := line.split()):
             break
 
-        data.append(dict(zip(keys, map(func, values))))
-
-    return data
+        yield dict(zip(keys, map(function, values)))
 
 def create_c_file(file_name):
     try:
@@ -67,10 +63,13 @@ def write_far_data_to_file(file_name, var_name):
 
 def process(segments, publics):
     for segment in segments:
-        match segment['name'][-5:], segment['class']:
-            case ['_TEXT', 'CODE']:
+        match segment['name'][-4:], segment['class']:
+            case ['TEXT', 'CODE']:
+                # C:/LSIJ/LSIC86pv/LSIC86MAN/chapter6x.doc
+                # For example, when the program in the file foo.c is compiled using the P model,
+                # it is placed in the segment named foo_TEXT
                 create_c_file(segment['name'][:-5])
-            case ['_DATA', 'FAR_DATA']:
+            case ['DATA', 'FAR_DATA']:
                 pass
 
 def main():
@@ -89,12 +88,10 @@ def main():
             for line in file:
                 match line.lower().split():
                     case ['start', *_] as keys:
-                        segments = read_and_map(**locals(), func=int_or_str)
-                    case ['origin', *_] as keys:
-                        pass
-                    case ['address', *_] as keys:
-                        next(file)
-                        publics = read_and_map(**locals(), func=ptr_or_str)
+                        segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
+                    case ['address', *_]:
+                        next(file) # hack
+                        publics = [public for public in read_and_map(file, ('address', 'name'), ptr_or_str)]
     except:
         pass
     else:
@@ -105,4 +102,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
