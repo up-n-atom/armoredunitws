@@ -65,7 +65,7 @@ def process(segments, publics):
     for segment in segments:
         match segment['name'][-4:], segment['class']:
             case ['TEXT', 'CODE']:
-                # C:/LSIJ/LSIC86pv/LSIC86MAN/chapter6x.doc
+                # C:\LSIJ\LSIC86pv\LSIC86MAN\chapter6x.doc
                 # For example, when the program in the file foo.c is compiled using the P model,
                 # it is placed in the segment named foo_TEXT
                 create_c_file(segment['name'][:-5])
