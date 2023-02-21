@@ -61,16 +61,31 @@ def write_far_data_to_file(file_name, var_name):
     except:
         pass
 
-def process(segments, publics):
+def convert_to_src(segments, publics):
     for segment in segments:
         match segment['name'][-4:], segment['class']:
             case ['TEXT', 'CODE']:
-                # C:\LSIJ\LSIC86pv\LSIC86MAN\chapter6x.doc
+                # C:/LSIJ/LSIC86pv/LSIC86MAN/chapter6x.doc
                 # For example, when the program in the file foo.c is compiled using the P model,
                 # it is placed in the segment named foo_TEXT
                 create_c_file(segment['name'][:-5])
             case ['DATA', 'FAR_DATA']:
                 pass
+
+def read_map_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            for line in file:
+                match line.lower().split():
+                    case ['start', *_] as keys:
+                        segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
+                    case ['address', *_]:
+                        next(file) # hack
+                        publics = [public for public in read_and_map(file, ('address', 'name'), ptr_or_str)]
+    except:
+        raise
+    else:
+        return segments, publics
 
 def main():
     global _src_dir_fd
@@ -84,18 +99,9 @@ def main():
             _src_dir_fd = os.open('../src', os.O_RDONLY)
 
     try:
-        with open('../ArmoredUnit.MAP', 'r') as file:
-            for line in file:
-                match line.lower().split():
-                    case ['start', *_] as keys:
-                        segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
-                    case ['address', *_]:
-                        next(file) # hack
-                        publics = [public for public in read_and_map(file, ('address', 'name'), ptr_or_str)]
+        convert_to_src(*read_map_file('../ArmoredUnit.MAP'))
     except:
         pass
-    else:
-        process(segments, publics)
 
     if _src_dir_fd is not None:
         os.close(_src_dir_fd)
