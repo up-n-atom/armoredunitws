@@ -4,6 +4,7 @@ _src_dir_fd = None
 
 src_path = os.path.join(os.path.pardir, 'src')
 
+
 def src_file_opener(path, flags):
     global _src_dir_fd
 
@@ -20,7 +21,6 @@ def src_file_exists(path, ignore_errors=True):
     except FileNotFoundError:
         if ignore_errors:
             return False
-
         raise
 
 def hex_or_str(s):
@@ -35,7 +35,6 @@ def hex_or_str(s):
 def ptr_or_str(s):
     try:
         segment, offset = [int(x, 16) for x in s.split(':')]
-
         return ((segment << 4) & 0xffff0) + offset
     except ValueError:
         return s.removesuffix('_')
@@ -44,7 +43,6 @@ def read_and_map(file, keys, function):
     for line in file:
         if not (values := line.split()):
             break
-
         yield dict(zip(keys, map(function, values)))
 
 def create_c_file(file_name):
@@ -107,6 +105,7 @@ def main():
 
     if _src_dir_fd is not None:
         os.close(_src_dir_fd)
+
 
 if __name__ == '__main__':
     main()
