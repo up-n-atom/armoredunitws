@@ -2,6 +2,8 @@ import os
 
 _src_dir_fd = None
 
+src_path = os.path.join(os.path.pardir, 'src')
+
 def src_file_opener(path, flags):
     global _src_dir_fd
 
@@ -91,15 +93,15 @@ def main():
     global _src_dir_fd
 
     try:
-        os.makedirs('../src')
+        os.makedirs(src_path)
     except FileExistsError:
         pass
     finally:
         if _src_dir_fd is None:
-            _src_dir_fd = os.open('../src', os.O_RDONLY)
+            _src_dir_fd = os.open(src_path, os.O_RDONLY)
 
     try:
-        convert_to_src(*read_map_file('../ArmoredUnit.MAP'))
+        convert_to_src(*read_map_file(os.path.join(os.path.pardir, 'ArmoredUnit.MAP')))
     except:
         pass
 
