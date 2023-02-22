@@ -34,7 +34,7 @@ def hex_or_str(s):
 
 def ptr_or_str(s):
     try:
-        segment, offset = map(lambda x: int(x, 16), s.split(':'))
+        segment, offset = [int(x, 16) for x in s.split(':')]
 
         return ((segment << 4) & 0xffff0) + offset
     except ValueError:
