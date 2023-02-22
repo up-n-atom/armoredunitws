@@ -34,7 +34,7 @@ def hex_or_str(s):
 def ptr_or_str(s):
     try:
         segment, offset = [int(x, 16) for x in s.split(':')]
-        return ((segment << 4) & 0xffff0) + offset
+        return (segment << 4) + offset
     except ValueError:
         return s.removesuffix('_')
 
