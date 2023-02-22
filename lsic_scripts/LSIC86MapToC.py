@@ -27,7 +27,6 @@ def hex_or_str(s):
     try:
         if not s.endswith('H'):
             raise ValueError
-
         return int(s[:-1], base=16)
     except ValueError:
         return s
@@ -73,19 +72,15 @@ def convert_to_src(segments, publics):
                 pass
 
 def read_map_file(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            for line in file:
-                match line.lower().split():
-                    case ['start', *_] as keys:
-                        segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
-                    case ['address', *_]:
-                        next(file) # hack
-                        publics = [_ for _ in read_and_map(file, ('address', 'name'), ptr_or_str)]
-    except:
-        raise
-    else:
-        return segments, publics
+    with open(file_path, 'r') as file:
+        for line in file:
+            match line.lower().split():
+                case ['start', *_] as keys:
+                    segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
+                case ['address', *_]:
+                    next(file) # hack
+                    publics = [_ for _ in read_and_map(file, ('address', 'name'), ptr_or_str)]
+    return segments, publics
 
 def main():
     global _src_dir_fd
