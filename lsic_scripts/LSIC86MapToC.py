@@ -83,7 +83,7 @@ def read_map_file(file_path):
                         segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
                     case ['address', *_]:
                         next(file) # hack
-                        publics = [public for public in read_and_map(file, ('address', 'name'), ptr_or_str)]
+                        publics = [_ for _ in read_and_map(file, ('address', 'name'), ptr_or_str)]
     except:
         raise
     else:
