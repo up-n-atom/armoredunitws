@@ -27,7 +27,7 @@ def hex_or_str(s):
     try:
         if not s.endswith('H'):
             raise ValueError
-        return int(s[:-1], base=16)
+        return int(s[:-1], 16)
     except ValueError:
         return s
 
