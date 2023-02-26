@@ -60,7 +60,7 @@ def write_far_data_to_file(filename, var_name):
     except IOError:
         pass
 
-def convert_to_src(segments, publics):
+def convert_to_src(segments, symbols):
     for segment in segments:
         match segment['name'][-4:], segment['class']:
             case ['TEXT', 'CODE']:
@@ -79,8 +79,8 @@ def read_map_file(filepath):
                     segments = [segment for segment in read_and_map(file, keys, hex_or_str) if segment['class'] in ('CODE', 'FAR_DATA')]
                 case ['address', *_]:
                     next(file) # hack
-                    publics = [_ for _ in read_and_map(file, ('address', 'name'), ptr_or_str)]
-    return segments, publics
+                    symbols = [_ for _ in read_and_map(file, ('address', 'name'), ptr_or_str)]
+    return segments, symbols
 
 def main():
     global _src_dir_fd
