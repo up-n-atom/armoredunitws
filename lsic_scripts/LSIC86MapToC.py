@@ -44,18 +44,18 @@ def read_and_map(file, keys, function):
             break
         yield dict(zip(keys, map(function, values), strict=True))
 
-def create_c_file(file_name):
+def create_c_file(filename):
     try:
-        with open(f"{file_name}.c", 'x', opener=src_file_opener) as file:
+        with open(f"{filename}.c", 'x', opener=src_file_opener) as file:
             pass
     except:
         pass
 
-def write_far_data_to_file(file_name, var_name):
+def write_far_data_to_file(filename, var_name):
     try:
-        src_file_exists(file_name, ignore_errors=False)
+        src_file_exists(filename, ignore_errors=False)
 
-        with open(file_name, 'a', newline='\r\n', opener=src_file_opener) as file:
+        with open(filename, 'a', newline='\r\n', opener=src_file_opener) as file:
              raise NotImplementedError
     except IOError:
         pass
@@ -71,8 +71,8 @@ def convert_to_src(segments, publics):
             case ['DATA', 'FAR_DATA']:
                 pass
 
-def read_map_file(file_path):
-    with open(file_path, 'r') as file:
+def read_map_file(filepath):
+    with open(filepath, 'r') as file:
         for line in file:
             match line.lower().split():
                 case ['start', *_] as keys:
