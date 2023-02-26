@@ -42,7 +42,7 @@ def read_and_map(file, keys, function):
     for line in file:
         if not (values := line.split()):
             break
-        yield dict(zip(keys, map(function, values)))
+        yield dict(zip(keys, map(function, values), strict=True))
 
 def create_c_file(file_name):
     try:
