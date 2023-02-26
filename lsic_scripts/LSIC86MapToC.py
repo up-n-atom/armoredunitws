@@ -56,8 +56,8 @@ def write_far_data_to_file(file_name, var_name):
         src_file_exists(file_name, ignore_errors=False)
 
         with open(file_name, 'a', newline='\r\n', opener=src_file_opener) as file:
-            pass
-    except:
+             raise NotImplementedError
+    except IOError:
         pass
 
 def convert_to_src(segments, publics):
