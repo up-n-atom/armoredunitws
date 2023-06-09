@@ -6,16 +6,12 @@ src_path = os.path.join(os.path.pardir, 'src')
 
 
 def src_file_opener(path, flags):
-    global _src_dir_fd
-
     if _src_dir_fd is not None:
         return os.open(path, flags, mode=0o644, dir_fd=_src_dir_fd)
     else:
         return os.open(path, flags)
 
 def src_file_exists(path, ignore_errors=True):
-    global _src_dir_fd
-
     try:
         return os.lstat(path, dir_fd=_src_dir_fd) is not None
     except FileNotFoundError:
