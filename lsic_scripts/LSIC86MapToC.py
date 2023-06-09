@@ -67,7 +67,9 @@ def convert_to_src(segments, symbols):
                 # C:/LSIJ/LSIC86pv/LSIC86MAN/chapter6x.doc
                 # For example, when the program in the file foo.c is compiled using the P model,
                 # it is placed in the segment named foo_TEXT
-                create_c_file(segment['name'][:-5])
+                filename = '_'.join(segment['name'].split('_')[:-1])
+                if len(filename):
+                    create_c_file(filename)
             case ['DATA', 'FAR_DATA']:
                 pass
 
