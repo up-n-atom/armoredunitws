@@ -58,14 +58,13 @@ def write_far_data_to_file(filename, var_name):
 
 def convert_to_src(segments, symbols):
     for segment in segments:
-        match segment['name'][-4:], segment['class']:
+        name, *extra = segment['name'].rsplit('_', 1)
+        match *extra, segment['class']:
             case ['TEXT', 'CODE']:
                 # C:/LSIJ/LSIC86pv/LSIC86MAN/chapter6x.doc
                 # For example, when the program in the file foo.c is compiled using the P model,
                 # it is placed in the segment named foo_TEXT
-                filename = '_'.join(segment['name'].split('_')[:-1])
-                if len(filename):
-                    create_c_file(filename)
+                create_c_file(name)
             case ['DATA', 'FAR_DATA']:
                 pass
 
