@@ -79,7 +79,7 @@ def read_map_file(filepath):
 def main(srcpath = None):
     global _src_dir_fd
 
-    if not srcpath:
+    if srcpath is None:
         srcpath = os.path.join(os.path.pardir, 'src')
 
     try:
